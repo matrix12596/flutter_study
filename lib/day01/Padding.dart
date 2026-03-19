@@ -12,14 +12,16 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Center(child: Text('Align对齐组件'))),
+        appBar: AppBar(title: Center(child: Text('Padding对齐组件'))),
         body: Container(
-          color: Colors.blue,
-          child: Align(
-            alignment: Alignment.center,
-            widthFactor: 3,
-            heightFactor: 3,
-            child: Icon(Icons.star, size: 150, color: Colors.amber),
+          color: Colors.amber,
+          child: Flex(
+            direction: Axis.vertical,
+            children: [
+              Container(height: 100, color: Colors.blue),
+              Expanded(child: Container(color: Colors.blueGrey)),
+              Container(height: 100, color: Colors.red),
+            ],
           ),
         ),
       ),
